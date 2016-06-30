@@ -10,4 +10,5 @@
     <string name="msjwelcom">Bienvenido a la tienda APP</string>
     <string name="txtInstallList">INSTALADO</string>
     <string name="txtUpdateList">ACTUALIZADO</string>
+    <string name="msj_error_data">Error al obtener datos de lista</string>
 </resources>

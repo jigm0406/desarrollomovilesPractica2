@@ -10,4 +10,6 @@
     <string name="msjwelcom">Welcom play Store</string>
     <string name="txtInstallList">INSTALLED</string>
     <string name="txtUpdateList">UPDATED</string>
+    <string name="msj_error_data">Error to get data to list</string>
+
 </resources>

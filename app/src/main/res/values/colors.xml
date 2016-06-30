@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#01DF01</color>
+    <color name="colorPrimaryDark">#088A29</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorTitle">#01DF01</color>
+    <color name="colorList">#01DF01</color>
+    <color name="colorIntallUpdateList">#01DF01</color>
+    <color name="colorUnistallDetail">#FFFFFF</color>
+    <color name="colorOpenDetail">#01DF01</color>
+    <color name="colortxtUnistallDetail">#01DF01</color>
+    <color name="colortxtOpenDetail">#FFFFFF</color>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Practica Dos</string>
+    <string name="app_title">Tienda Apps</string>
+    <string name="activity_detail_hint_NameApp">Nombre APP</string>
+    <string name="activity_detail_hint_NameDeployment">Nombre Desarrollador</string>
+    <string name="activity_detail_hint_DetailApp">Detalle APP</string>
+    <string name="activity_detail_Chkbox_TxtInstallActualize">Instalada</string>
+    <string name="activity_detail_Btn_Add">Agregar</string>
+    <string name="msjwelcom">Bienvenido a la tienda APP</string>
+    <string name="txtInstallList">INSTALADO</string>
+    <string name="txtUpdateList">ACTUALIZADO</string>
+</resources>

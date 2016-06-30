@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Practic two</string>
+    <string name="app_title">Apps Store</string>
+    <string name="activity_detail_hint_NameApp">APP Name</string>
+    <string name="activity_detail_hint_NameDeployment">Deployment Name</string>
+    <string name="activity_detail_hint_DetailApp">APP Detail</string>
+    <string name="activity_detail_Chkbox_TxtInstallActualize">Instaled</string>
+    <string name="activity_detail_Btn_Add">ADD</string>
+    <string name="msjbddempty">No existe APP en la tienda</string>
+    <string name="msjwelcom">Welcom play Store</string>
+    <string name="txtInstallList">INSTALLED</string>
+    <string name="txtUpdateList">UPDATED</string>
+</resources>

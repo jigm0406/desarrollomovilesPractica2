@@ -1,6 +1,7 @@
 package mx.unam.jigm.practica2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,11 +29,18 @@ public class ActivityDetail extends AppCompatActivity implements View.OnClickLis
     private CheckBox chkinstallaupdate;
     private boolean isWifi;
     private ItemDataSource itemDataSource;
+    private int nImage;
 
     public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //para defir el xml a usar
         setContentView(R.layout.activity_detail);
+        //para obtener la imagen aleatoriemente
+        if (getIntent()!=null)
+        {
+            //obteniendo datos del intent
+            nImage=getIntent().getExtras().getInt("nImage");
+        }
         itemDataSource = new ItemDataSource(getApplicationContext());
         //para asignar los elementos del xml a variables java
         txtnameapp = (EditText) findViewById(R.id.NameAPP);
@@ -78,7 +86,7 @@ public class ActivityDetail extends AppCompatActivity implements View.OnClickLis
             itemlist.deployment=namedeploysave;
             itemlist.detailapp=detailappsave;
             itemlist.InstalUpdate=chkinstallupdate;
-            itemlist.resourceId=isWifi?0:1;
+            itemlist.resourceId=nImage;//isWifi?0:1;
               //guardar datos en db
             itemDataSource.saveItemList(itemlist);
             //inicializar textview y checkbox
@@ -86,11 +94,9 @@ public class ActivityDetail extends AppCompatActivity implements View.OnClickLis
             txtdeployment.setText("");
             txtdetailapp.setText("");
             chkinstallaupdate.setSelected(false);
-            //regresar a la activity principal FALTA
-            //FALTA
-            Context mcontext = this;
-            Toast.makeText(mcontext, R.string.msjbddempty, Toast.LENGTH_SHORT).show();
-
+            Intent i = new Intent();
+             setResult(RESULT_OK,i);
+             finish();
         }
     }
 

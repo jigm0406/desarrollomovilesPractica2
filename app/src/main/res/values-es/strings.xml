@@ -11,4 +11,5 @@
     <string name="txtInstallList">INSTALADO</string>
     <string name="txtUpdateList">ACTUALIZADO</string>
     <string name="msj_error_data">Error al obtener datos de lista</string>
+    <string name="txtTitleDetail">Agregar App</string>
 </resources>

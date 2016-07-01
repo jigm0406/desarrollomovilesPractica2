@@ -1,6 +1,7 @@
 package mx.unam.jigm.practica2;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,8 +21,10 @@ import mx.unam.jigm.practica2.sql.ItemDataSource;
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private ItemDataSource itemDataSource;
-    private boolean isWifi;
     private int counter;
+    private int ModNumber;
+   //para el activity request
+    private static final int REQUEST_CODE_INSTALL_APP = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +38,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onStart() {
         super.onStart();
         get_list();
     }
+
     //obtener lista de la bdd
     private void  get_list()
     {
@@ -47,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
         if (itemDataSource.getAllItems() != null)
         {
             List<ModelItem> modelItemList = itemDataSource.getAllItems();
-            isWifi = !(modelItemList.size() % 2 == 0);
-            counter = modelItemList.size();
+             counter = modelItemList.size();
             android.content.Context context = this;
             listView.setAdapter(new AdapterItemList(context,modelItemList));
             if (counter == 0)
@@ -66,13 +70,14 @@ public class MainActivity extends AppCompatActivity {
             Context mcontext = this;
             Toast.makeText(mcontext, R.string.msjbddempty, Toast.LENGTH_SHORT).show();
         }
+        //para la edicion de elemento en la lista
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                AdapterItemList adapterlist = (AdapterItemList) parent.getAdapter();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                AdapterItemList adapterlist = (AdapterItemList)  parent.getAdapter();
                 ModelItem modelItem = adapterlist.getItem(position);
-
                 Intent intent = new Intent(getApplicationContext(), DetailStoreApp.class);
                 intent.putExtra("name_app", modelItem.nameapp);
                 intent.putExtra("name_deploy", modelItem.deployment);
@@ -84,10 +89,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+//alta de u elemento en la lista
     private void ir()
     {
-        Intent intent = new Intent(getApplicationContext(), ActivityDetail.class);
-        startActivity(intent);
+        Intent intent;
+        intent = new Intent(getApplicationContext(), ActivityDetail.class);
+        ModNumber=counter%2;
+        intent.putExtra("nImage", ModNumber);
+        startActivityForResult(intent,REQUEST_CODE_INSTALL_APP);
+    }
+    //regreso activity request
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(REQUEST_CODE_INSTALL_APP==requestCode && resultCode==RESULT_OK){
+           get_list();
+        }else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }

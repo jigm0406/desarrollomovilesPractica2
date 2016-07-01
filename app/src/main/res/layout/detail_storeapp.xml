@@ -2,81 +2,105 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_weight="1"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="primero"
-        android:layout_marginTop="26dp"
-        android:textSize="@dimen/sizeNameappList"/>
+
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_weight="1"
+            android:layout_marginTop="@dimen/sizeDetailListMarginTitle"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/row_image_view"
                 android:layout_margin="@dimen/margin_lo"
                 android:layout_width="@dimen/sizeimage"
-                android:layout_height="@dimen/sizeimage"
-                android:layout_marginTop="26dp"/>
+                android:layout_height="@dimen/sizeimage"/>
         </LinearLayout>
         <LinearLayout
-            android:layout_weight="1"
+            android:layout_marginTop="@dimen/sizeDetailListMarginTitle"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_weight="1"
                 android:textStyle="bold"
                 android:id="@+id/txtItemNameAPP"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="nameapp"
-                android:layout_marginTop="26dp"
+                android:layout_height="wrap_content"
                 android:textSize="@dimen/sizeNameappList"/>
             <TextView
                 android:textSize="@dimen/sizeDepoymentList"
-                android:layout_weight="1"
                 android:textStyle="italic"
                 android:id="@+id/txtItemNameDeployment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="deployment" />
+                android:layout_height="wrap_content"/>
             <TextView
                 android:textSize="@dimen/sizeDetailList"
-                android:layout_weight="1"
-                android:text="detail"
                 android:id="@+id/txtItemDetailAPP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:layout_marginTop="@dimen/sizeDetailListMarginBtn"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <Button
             android:id="@+id/btnDetailStoreUnistall"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="unistall"
+            android:layout_marginRight="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_marginLeft="@dimen/sizeDetailListMarginBtnLR"
             android:textColor="@color/colortxtUnistallDetail"
             android:background="@color/colorUnistallDetail"/>
         <Button
             android:id="@+id/btnDetailStoreOpen"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="open"
+            android:layout_marginRight="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_marginLeft="@dimen/sizeDetailListMarginBtnLR"
             android:textColor="@color/colortxtOpenDetail"
             android:background="@color/colorOpenDetail"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/sizeDetailListMarginBtn"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/ic_device_access_time"
+            android:layout_margin="@dimen/margin_lo"
+            android:layout_marginRight="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_marginLeft="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_width="@dimen/sizeimage"
+            android:layout_height="@dimen/sizeimage"/>
+        <ImageView
+            android:src="@drawable/ic_file_cloud_done"
+            android:layout_margin="@dimen/margin_lo"
+            android:layout_marginRight="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_marginLeft="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_width="@dimen/sizeimage"
+            android:layout_height="@dimen/sizeimage"/>
+        <ImageView
+            android:src="@drawable/ic_maps_local_taxi"
+            android:layout_margin="@dimen/margin_lo"
+            android:layout_marginRight="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_marginLeft="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_width="@dimen/sizeimage"
+            android:layout_height="@dimen/sizeimage"/>
+        <ImageView
+            android:src="@drawable/ic_social_school"
+            android:layout_margin="@dimen/margin_lo"
+            android:layout_marginRight="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_marginLeft="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_width="@dimen/sizeimage"
+            android:layout_height="@dimen/sizeimage"/>
     </LinearLayout>
 </LinearLayout>

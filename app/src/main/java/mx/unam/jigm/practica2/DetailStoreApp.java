@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     private String sDetail;
     private Integer iResource;
     private Integer iInstallUpdate;
+    private Button btnUnistallaInstall,btnOpen;
     private final String url1="http://www.posgrado.unam.mx/sites/default/files/el_viaje_de_los_objetos02.jpg";
     private final String url2="http://www.posgrado.unam.mx/sites/default/files/cepe-tucson02.jpg";
 
@@ -31,7 +33,8 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         //para escuchar los botones de unistall y abrir archivo
         findViewById(R.id.btnDetailStoreUnistall).setOnClickListener(this);
         findViewById(R.id.btnDetailStoreOpen).setOnClickListener(this);
-        Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_error_data),Toast.LENGTH_SHORT).show();
+        btnUnistallaInstall=(Button)findViewById(R.id.btnDetailStoreUnistall);
+        btnOpen=(Button)findViewById(R.id.btnDetailStoreOpen);
         if (getIntent()!=null)
         {
             //obteniendo datos del intent
@@ -50,6 +53,14 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
             twNameApp.setText(sNameApp);
             twDeploy.setText(sDeployment);
             twDetail.setText(sDetail);
+             if (iInstallUpdate==1)
+             {
+                 btnUnistallaInstall.setText("UNINSTALL");
+             }
+             else
+             {
+                 btnUnistallaInstall.setText("UPDATE");
+             }
             // obtener la imagen por picasso
             Boolean bimagen=false;
             if (iResource==1)
@@ -62,16 +73,6 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
             }
             Context mcontext = this;
             Picasso.with(mcontext).load(bimagen?url1:url2).into(twimg);
-            //para cambiar el boton de unistall a update
-           // if (iInstallUpdate==1)
-           // {
-           //     txtinstallupdate.setText(R.string.txtInstallList);
-           // }
-           // else
-           // {
-           //     txtinstallupdate.setText(R.string.txtUpdateList);
-           // }
-
         }
         else
         {

@@ -4,13 +4,17 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="LinearLayoutRowList">56dp</dimen>
     <dimen name="margin_lo">16dp</dimen>
-    <dimen name="textsizefirst">18sp</dimen>
-    <dimen name="textsizesecond">15sp</dimen>
-    <dimen name="sizeTitle">30sp</dimen>
+    <dimen name="textsizefirst">18dp</dimen>
+    <dimen name="textsizesecond">15dp</dimen>
+    <dimen name="sizeTitle">30dp</dimen>
     <dimen name="sizedividelist">2sp</dimen>
-    <dimen name="sizeimage">56sp</dimen>
-    <dimen name="sizeNameappList">20sp</dimen>
-    <dimen name="sizeDepoymentList">15sp</dimen>
-    <dimen name="sizeDetailList">10sp</dimen>
-    <dimen name="sizeInstallUpdateList">15sp</dimen>
+    <dimen name="sizeimage">66dp</dimen>
+    <dimen name="sizeNameappList">20dp</dimen>
+    <dimen name="sizeDepoymentList">15dp</dimen>
+    <dimen name="sizeDetailList">10dp</dimen>
+    <dimen name="sizeInstallUpdateList">15dp</dimen>
+    <dimen name="sizeDetailListMarginBtn">25dp</dimen>
+    <dimen name="sizeDetailListMarginTitle">25dp</dimen>
+    <dimen name="sizeDetailListMarginBtnLR">15dp</dimen>
+
 </resources>

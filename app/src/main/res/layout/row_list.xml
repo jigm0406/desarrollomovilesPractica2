@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
     android:minHeight="@dimen/LinearLayoutRowList"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_weight="0.7"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/row_image_view"
             android:layout_margin="@dimen/margin_lo"
@@ -19,31 +20,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_weight="1"
-            android:textStyle="bold"
+             android:textStyle="bold"
             android:id="@+id/txtItemNameAPP"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="@dimen/sizeNameappList"/>
         <TextView
             android:textSize="@dimen/sizeDepoymentList"
-            android:layout_weight="1"
             android:textStyle="italic"
             android:id="@+id/txtItemNameDeployment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
         <TextView
             android:textSize="@dimen/sizeDetailList"
             android:layout_weight="1"
             android:id="@+id/txtItemDetailAPP"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
         <TextView
             android:textSize="@dimen/sizeInstallUpdateList"
-            android:layout_weight="1"
             android:id="@+id/txtItemInstalActalizer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:textColor="@color/colorIntallUpdateList"
             android:gravity="right"/>

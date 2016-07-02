@@ -21,5 +21,6 @@
         <activity android:name=".DetailStoreApp"
             android:label="DetailStoreApp"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ActivityEdit"/>
     </application>
 </manifest>

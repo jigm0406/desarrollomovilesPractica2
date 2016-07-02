@@ -28,6 +28,7 @@ public class MySqliteHelper extends SQLiteOpenHelper
             COLUMN_ITEM_DETAIL+" text not null,"+
             COLUMN_ITEM_RESOURCE+" integer not null,"+
             COLUMN_ITEM_INSTALLUPDATE+" integer not null)";
+
 private static final String DELETE_TABLE=" FROM "+TABLE_NAME;
 
     public MySqliteHelper(Context context) {
@@ -45,5 +46,6 @@ private static final String DELETE_TABLE=" FROM "+TABLE_NAME;
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
         db.execSQL(DELETE_TABLE);
+        db.execSQL(CREATE_TABLE);
     }
 }

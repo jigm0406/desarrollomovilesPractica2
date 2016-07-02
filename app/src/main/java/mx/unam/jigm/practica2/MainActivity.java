@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 AdapterItemList adapterlist = (AdapterItemList)  parent.getAdapter();
                 ModelItem modelItem = adapterlist.getItem(position);
                 Intent intent = new Intent(getApplicationContext(), DetailStoreApp.class);
+                intent.putExtra("idItem", modelItem.id);
                 intent.putExtra("name_app", modelItem.nameapp);
                 intent.putExtra("name_deploy", modelItem.deployment);
                 intent.putExtra("detail_app", modelItem.detailapp);

@@ -27,6 +27,7 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     private String sDetail;
     private Integer iResource;
     private Integer iInstallUpdate;
+    private String iditem;
     private Button btnUnistallaInstall,btnOpen;
     //para mostrar la informacion recibida
     TextView twNameApp,twDeploy,twDetail,twInstallUpdate;
@@ -134,18 +135,19 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     //regreso activity request del edit
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(REQUEST_CODE_INSTALL_APP==requestCode && resultCode==RESULT_OK){
-            //get_list();
-            twNameApp.setText(getIntent().getExtras().getString("name_app"));
-            twDeploy.setText(getIntent().getExtras().getString("name_deploy"));
-            if (getIntent().getExtras().getInt("install_update")==1)
-            {
-                btnUnistallaInstall.setText("UNINSTALL");
+            //recuperando datos para mostrarlos en los textview
+            if (getIntent()!=null) {
+                iditem=getIntent().getExtras().getString("idItem");
+                twNameApp.setText(getIntent().getExtras().getString("name_app"));
+                twDeploy.setText(getIntent().getExtras().getString("name_deploy"));
+                if (getIntent().getExtras().getInt("install_update") == 1) {
+                    btnUnistallaInstall.setText("UNINSTALL");
+                } else {
+                    btnUnistallaInstall.setText("UPDATE");
+                }
             }
-            else
-            {
-                btnUnistallaInstall.setText("UPDATE");
-            }
-        }else {
+        }else
+        {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }

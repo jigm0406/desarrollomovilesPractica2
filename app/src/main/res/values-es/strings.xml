@@ -12,4 +12,13 @@
     <string name="txtUpdateList">ACTUALIZADO</string>
     <string name="msj_error_data">Error al obtener datos de lista</string>
     <string name="txtTitleDetail">Agregar App</string>
+    <string name="txtTitleToolbar">Tienda App</string>
+    <string name="txtTitleNotifi">Practica Dos</string>
+    <string name="txtUpdateMenu">Actualiza</string>
+    <string name="txtTitleEndMenu">Salir</string>
+    <string name="txtAddMenu">Agregar</string>
+    <string name="txtEditMenu">Editar detalle</string>
+    <string name="txtReturnMenu">Regresar</string>
+    <string name="txtTitleEdit">Editar App</string>
+    <string name="activity_detail_Btn_Edit">Editar</string>
 </resources>

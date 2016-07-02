@@ -1,13 +1,13 @@
 package mx.unam.jigm.practica2;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -30,13 +30,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         itemDataSource = new ItemDataSource(getApplicationContext());
         setContentView(R.layout.activity_main);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ir();
+       //definir toolbar
+        Toolbar toolbar =(Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.txtTitleNotifi);
+       // getSupportActionBar().setIcon(android.R.drawable.sym_def_app_icon);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+    }
 
-            }
-        });
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_activity_main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem itemmenu) {
+        switch (itemmenu.getItemId())
+        {
+            case R.id.ItemmenuAdd:
+                ir();
+                return true;
+            case R.id.itemMenuEnd:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(itemmenu);
     }
 
     @Override

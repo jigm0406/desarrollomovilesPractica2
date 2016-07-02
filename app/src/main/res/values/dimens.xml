@@ -16,5 +16,5 @@
     <dimen name="sizeDetailListMarginBtn">25dp</dimen>
     <dimen name="sizeDetailListMarginTitle">25dp</dimen>
     <dimen name="sizeDetailListMarginBtnLR">15dp</dimen>
-
+    <dimen name="sizetoolbarelevation">16dp</dimen>
 </resources>

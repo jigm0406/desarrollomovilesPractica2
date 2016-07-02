@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+            android:text="@string/txtTitleEdit"
+            android:textSize="@dimen/sizeTitle"
+            android:layout_marginTop="@dimen/sizeDetailListMarginTitle"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTitle"/>
+        <EditText
+            android:id="@+id/NameAPP"
+            android:layout_marginTop="@dimen/sizeDetailListMarginTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTitle"
+            android:hint="@string/activity_detail_hint_NameApp"/>
+        <EditText
+            android:id="@+id/NameDeployment"
+            android:layout_below="@+id/NameAPP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTitle"
+            android:hint="@string/activity_detail_hint_NameDeployment"/>
+        <CheckBox
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/DetailApp"
+            android:id="@+id/chkInstallUpdate"
+            android:textColor="@color/colorTitle"
+            android:text="@string/activity_detail_Chkbox_TxtInstallActualize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_gravity="right"
+            android:text="@string/activity_detail_Btn_Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colortxtOpenDetail"
+            android:background="@color/colorOpenDetail"/>
+
+</LinearLayout>

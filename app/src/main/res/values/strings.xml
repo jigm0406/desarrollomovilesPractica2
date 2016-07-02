@@ -6,11 +6,19 @@
     <string name="activity_detail_hint_DetailApp">APP Detail</string>
     <string name="activity_detail_Chkbox_TxtInstallActualize">Instaled</string>
     <string name="activity_detail_Btn_Add">ADD</string>
-    <string name="msjbddempty">No existe APP en la tienda</string>
-    <string name="msjwelcom">Welcom play Store</string>
+    <string name="msjbddempty">Dont APP in Storea</string>
+    <string name="msjwelcom">Welcom Play Store</string>
     <string name="txtInstallList">INSTALLED</string>
     <string name="txtUpdateList">UPDATED</string>
     <string name="msj_error_data">Error to get data to list</string>
     <string name="txtTitleDetail">Add App</string>
-
+    <string name="txtTitleToolbar">App Store</string>
+    <string name="txtTitleNotifi">Practic two</string>
+    <string name="txtUpdateMenu">Update</string>
+    <string name="txtTitleEndMenu">End</string>
+    <string name="txtAddMenu">Add</string>
+    <string name="txtEditMenu">Detail edit</string>
+    <string name="txtReturnMenu">Return</string>
+    <string name="txtTitleEdit">App Edit</string>
+    <string name="activity_detail_Btn_Edit">Edit</string>
 </resources>

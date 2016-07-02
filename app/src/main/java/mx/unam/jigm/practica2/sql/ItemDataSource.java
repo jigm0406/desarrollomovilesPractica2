@@ -34,12 +34,12 @@ public class ItemDataSource
     }
     public void updateItemList(ModelItem modelItem)
     {
-        String sId=Integer.toString(modelItem.id);
+        //String sId=Integer.toString(modelItem.id);
         ContentValues contentValuesAPP = new ContentValues();
         contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_APP,modelItem.nameapp);
         contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_DEPLOY,modelItem.deployment);
         contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_INSTALLUPDATE,modelItem.InstalUpdate);
-        db.update(MySqliteHelper.TABLE_NAME,contentValuesAPP,sId,null);
+        db.update(MySqliteHelper.TABLE_NAME,contentValuesAPP,MySqliteHelper.COLUMN_ID+"='"+modelItem.id+"'",null);
     }
     public void deleteItem(ModelItem modelItem)
     {

@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar =(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.txtTitleNotifi);
-       // getSupportActionBar().setIcon(android.R.drawable.sym_def_app_icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }

@@ -26,8 +26,8 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     private String sDeployment;
     private String sDetail;
     private Integer iResource;
-    private Integer iInstallUpdate;
-    private String iditem;
+    private int iInstallUpdate;
+    private int iditem;
     private Button btnUnistallaInstall,btnOpen;
     //para mostrar la informacion recibida
     TextView twNameApp,twDeploy,twDetail,twInstallUpdate;
@@ -51,13 +51,13 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         Toolbar toolbar =(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.txtTitleNotifi);
-        // getSupportActionBar().setIcon(android.R.drawable.sym_def_app_icon);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
         if (getIntent()!=null)
         {
             //obteniendo datos del intent
+            iditem=getIntent().getExtras().getInt("idItem");
             sNameApp=getIntent().getExtras().getString("name_app");
             sDeployment=getIntent().getExtras().getString("name_deploy");
             sDetail=getIntent().getExtras().getString("detail_app");
@@ -116,7 +116,9 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
                 ir();
                 return true;
             case R.id.itemMenuReturn:
-                finish();
+                //activity main
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(itemmenu);
@@ -127,6 +129,7 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     {
         Intent intent;
         intent = new Intent(getApplicationContext(), ActivityEdit.class);
+        intent.putExtra("idItem",iditem);
         intent.putExtra("name_app", sNameApp);
         intent.putExtra("name_deploy",sDeployment);
         intent.putExtra("install_update", iInstallUpdate);
@@ -137,7 +140,6 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         if(REQUEST_CODE_INSTALL_APP==requestCode && resultCode==RESULT_OK){
             //recuperando datos para mostrarlos en los textview
             if (getIntent()!=null) {
-                iditem=getIntent().getExtras().getString("idItem");
                 twNameApp.setText(getIntent().getExtras().getString("name_app"));
                 twDeploy.setText(getIntent().getExtras().getString("name_deploy"));
                 if (getIntent().getExtras().getInt("install_update") == 1) {

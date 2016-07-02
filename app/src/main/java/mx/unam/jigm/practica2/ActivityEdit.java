@@ -108,7 +108,7 @@ public class ActivityEdit extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("name_app", itemlist.nameapp);
             intent.putExtra("name_deploy", itemlist.deployment);
             intent.putExtra("install_update", itemlist.InstalUpdate);
-            setResult(RESULT_OK,i);
+            setResult(RESULT_OK,intent);
             startActivity(intent);
             //
         }

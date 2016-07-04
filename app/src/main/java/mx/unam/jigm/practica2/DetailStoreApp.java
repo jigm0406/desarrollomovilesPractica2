@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import mx.unam.jigm.practica2.service.ServiceNotify;
+
 /**
  * Created by Mario on 29/06/2016.
  */
@@ -163,7 +165,9 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
                 break;
-
+            case R.id.btnDetailStoreUnistall:
+                startService(new Intent(getApplicationContext(), ServiceNotify.class));
+                break;
         }
 
     }

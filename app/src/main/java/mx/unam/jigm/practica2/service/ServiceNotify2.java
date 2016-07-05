@@ -1,5 +1,4 @@
 package mx.unam.jigm.practica2.service;
-
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -13,11 +12,10 @@ import android.support.v7.app.NotificationCompat;
 
 import mx.unam.jigm.practica2.DetailStoreApp;
 import mx.unam.jigm.practica2.R;
-
 /**
- * Created by Mario on 03/07/2016.
+ * Created by Mario on 04/07/2016.
  */
-public class ServiceNotify extends Service {
+public class ServiceNotify2 extends Service {
     private MyAsyncTask myAsyncTask;
     private int id;
     @Nullable
@@ -54,8 +52,8 @@ public class ServiceNotify extends Service {
         {
             mNotifi = (NotificationCompat.Builder) new NotificationCompat
                     .Builder(getApplicationContext())
-                    .setContentTitle("Desinstalando")
-                    .setContentText("Desinstalando APP")
+                    .setContentTitle("Actualizado")
+                    .setContentText("Actualizando APP")
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.ic_file_cloud_done))
                     .setSmallIcon(android.R.drawable.ic_dialog_email);
         }
@@ -95,12 +93,12 @@ public class ServiceNotify extends Service {
             {
                 //elimina progress cuando lo seteamos a 0
                 mNotifi.setProgress(0,0,false);
-                mNotifi.setContentTitle("desinstalación completa");
-                mNotifi.setContentText("Se ha completado en su totalidad la desinstalación");
-                mNotifi.setContentInfo("Desinstalado");
+                mNotifi.setContentTitle("Actualización completa");
+                mNotifi.setContentText("Se ha completado en su totalidad la Actualización");
+                mNotifi.setContentInfo("Actualizado");
                 mNotifi.setAutoCancel(true);
                 mNotifi.setStyle(new NotificationCompat.BigTextStyle()
-                .bigText("Se ha completado la desinstalación."));
+                        .bigText("Se ha completado la Actualización."));
                 PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),
                         0,new Intent(getApplicationContext(),
                                 DetailStoreApp.class),PendingIntent.FLAG_UPDATE_CURRENT);

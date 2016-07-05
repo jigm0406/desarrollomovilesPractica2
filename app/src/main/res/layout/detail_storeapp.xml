@@ -72,6 +72,16 @@
             android:textColor="@color/colortxtUnistallDetail"
             android:background="@color/colorUnistallDetail"/>
         <Button
+            android:id="@+id/btnDetailStoreUpdate"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UPATE"
+            android:layout_marginRight="@dimen/sizeDetailListMarginBtnLR"
+            android:layout_marginLeft="@dimen/sizeDetailListMarginBtnLR"
+            android:textColor="@color/colortxtUnistallDetail"
+            android:background="@color/colorUnistallDetail"/>
+        <Button
             android:id="@+id/btnDetailStoreOpen"
             android:layout_weight="1"
             android:layout_width="match_parent"

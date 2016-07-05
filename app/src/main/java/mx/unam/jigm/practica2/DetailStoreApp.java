@@ -17,7 +17,10 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import mx.unam.jigm.practica2.model.ModelItem;
 import mx.unam.jigm.practica2.service.ServiceNotify;
+import mx.unam.jigm.practica2.service.ServiceNotify2;
+import mx.unam.jigm.practica2.sql.ItemDataSource;
 
 /**
  * Created by Mario on 29/06/2016.
@@ -30,7 +33,7 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     private Integer iResource;
     private int iInstallUpdate;
     private int iditem;
-    private Button btnUnistallaInstall,btnOpen;
+    private Button btnUnistallaInstall,btnOpen,btnUpdate;
     //para mostrar la informacion recibida
     TextView twNameApp,twDeploy,twDetail,twInstallUpdate;
     ImageView  twimg;
@@ -40,6 +43,8 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     static String myURL;
     //para el activity request
     private static final int REQUEST_CODE_INSTALL_APP = 1;
+    //para el accesoa la bdd
+    private ItemDataSource itemDataSource;
     @Override
 
     public void onCreate(Bundle savedInstanceState) {
@@ -48,8 +53,11 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         //para escuchar los botones de unistall y abrir archivo
         findViewById(R.id.btnDetailStoreUnistall).setOnClickListener(this);
         findViewById(R.id.btnDetailStoreOpen).setOnClickListener(this);
+        findViewById(R.id.btnDetailStoreUpdate).setOnClickListener(this);
         btnUnistallaInstall=(Button)findViewById(R.id.btnDetailStoreUnistall);
         btnOpen=(Button)findViewById(R.id.btnDetailStoreOpen);
+        btnUpdate=(Button)findViewById(R.id.btnDetailStoreUpdate);
+        itemDataSource = new ItemDataSource(getApplicationContext());
         //definir toolbar
         Toolbar toolbar =(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -80,11 +88,12 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
             twDetail.setText(sDetail);
              if (iInstallUpdate==1)
              {
-                 btnUnistallaInstall.setText("UNINSTALL");
+                 btnUpdate.setText("UPDATE");
+                 btnUpdate.setEnabled(true);
              }
              else
              {
-                 btnUnistallaInstall.setText("UPDATE");
+                 btnUpdate.setEnabled(false);
              }
             // obtener la imagen por picasso
             Boolean bimagen=false;
@@ -170,6 +179,13 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.btnDetailStoreUnistall:
                 startService(new Intent(getApplicationContext(), ServiceNotify.class));
+                //borrar datos a la bdd
+                ModelItem itemlist = new ModelItem();
+                itemlist.id=iditem;
+                itemDataSource.deleteItem(itemlist);
+                break;
+            case R.id.btnDetailStoreUpdate:
+                startService(new Intent(getApplicationContext(), ServiceNotify2.class));
                 break;
         }
 

@@ -5,7 +5,7 @@
     <string name="activity_detail_hint_NameApp">Nombre APP</string>
     <string name="activity_detail_hint_NameDeployment">Nombre Desarrollador</string>
     <string name="activity_detail_hint_DetailApp">Detalle APP</string>
-    <string name="activity_detail_Chkbox_TxtInstallActualize">Instalada</string>
+    <string name="activity_detail_Chkbox_TxtInstallActualize">Actualizada</string>
     <string name="activity_detail_Btn_Add">Agregar</string>
     <string name="msjwelcom">Bienvenido a la tienda APP</string>
     <string name="txtInstallList">INSTALADO</string>
@@ -20,5 +20,7 @@
     <string name="txtEditMenu">Editar detalle</string>
     <string name="txtReturnMenu">Regresar</string>
     <string name="txtTitleEdit">Editar App</string>
-    <string name="activity_detail_Btn_Edit">Editar</string>
+
+    <string name="activity_detail_Btn_Edit">Edit</string>
+
 </resources>

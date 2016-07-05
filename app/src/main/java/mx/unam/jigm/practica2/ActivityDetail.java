@@ -69,12 +69,12 @@ public class ActivityDetail extends AppCompatActivity implements View.OnClickLis
         Integer chkinstallupdate;
         if (chkinstallaupdate.isChecked()) {
             //1 cuando ya fue instalado
-            chkinstallupdate=1;
+            chkinstallupdate=0;
         }
         else
         {
             //0 cuando no ha sido instalado
-            chkinstallupdate=0;
+            chkinstallupdate=1;
         }
 
         //valida campos llenos

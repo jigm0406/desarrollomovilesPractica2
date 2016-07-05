@@ -21,7 +21,7 @@ import mx.unam.jigm.practica2.model.ModelItem;
 public class AdapterItemList extends ArrayAdapter<ModelItem>
 {
     private final String url1="http://www.posgrado.unam.mx/sites/default/files/el_viaje_de_los_objetos02.jpg";
-    private final String url2="http://www.posgrado.unam.mx/sites/default/files/cepe-tucson02.jpg";
+    private final String url2="http://www.posgrado.unam.mx/sites/default/files/lengua-larga02.jpg";
 
     public AdapterItemList(Context context, List <ModelItem> objects) {
         super(context, 0, objects);
@@ -29,6 +29,7 @@ public class AdapterItemList extends ArrayAdapter<ModelItem>
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        final String myURL;
         if(convertView==null)
         {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_list,parent,false);
@@ -43,13 +44,13 @@ public class AdapterItemList extends ArrayAdapter<ModelItem>
         Boolean bimagen=false;
         if (modelItem.resourceId==1)
         {
-            bimagen=true;
+            myURL=url1;
         }
         else
         {
-            bimagen=false;
+            myURL=url2;
         }
-        Picasso.with(getContext()).load(bimagen?url1:url2).into(img);
+        Picasso.with(getContext()).load(myURL).into(img);
         txtItemnamedesarroller.setText(modelItem.deployment);
         txtItemNameApp.setText(modelItem.nameapp);
          txtDetailApp.setText(modelItem.detailapp);

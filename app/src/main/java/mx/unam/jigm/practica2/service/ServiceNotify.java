@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.NotificationCompat;
 
 import mx.unam.jigm.practica2.DetailStoreApp;
+import mx.unam.jigm.practica2.R;
 
 /**
  * Created by Mario on 03/07/2016.
@@ -36,20 +37,26 @@ public class ServiceNotify extends Service {
         {
             id=intent.getExtras().getInt("key_id");
         }
+        if(myAsyncTask==null)
+        {
+            myAsyncTask=new MyAsyncTask();
+            myAsyncTask.execute();
+        }
         return START_STICKY;
     }
+
     private class MyAsyncTask extends AsyncTask<Integer,Integer,Boolean>
     {
-private NotificationCompat.Builder mNotifi;
+        private NotificationCompat.Builder mNotifi;
 
         @Override
         protected void onPreExecute()
         {
-            mNotifi= (NotificationCompat.Builder) new NotificationCompat
+            mNotifi = (NotificationCompat.Builder) new NotificationCompat
                     .Builder(getApplicationContext())
                     .setContentTitle("Instalando")
                     .setContentText("istalando APP")
-                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), android.support.v7.appcompat.R.drawable.abc_ic_star_black_16dp))
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.ic_file_cloud_done))
                     .setSmallIcon(android.R.drawable.ic_dialog_email);
         }
         @Override
@@ -88,20 +95,23 @@ private NotificationCompat.Builder mNotifi;
             {
                 //elimina progress cuando lo seteamos a 0
                 mNotifi.setProgress(0,0,false);
-                mNotifi.setContentTitle("instalación completa");
-                mNotifi.setContentText("se ha completado en su totalidad la instalación");
-                mNotifi.setContentInfo("Instalado");
+                mNotifi.setContentTitle("desinstalación completa");
+                mNotifi.setContentText("se ha completado en su totalidad la desinstalación");
+                mNotifi.setContentInfo("Desinstalado");
                 mNotifi.setAutoCancel(true);
                 mNotifi.setStyle(new NotificationCompat.BigTextStyle()
-                .bigText("se ha completado la instalación, gracias por instalar la app"));
+                .bigText("se ha completado la desinstalación."));
                 PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),
                         0,new Intent(getApplicationContext(),
                                 DetailStoreApp.class),PendingIntent.FLAG_UPDATE_CURRENT);
+                mNotifi.setContentIntent(pendingIntent);
 
-                PendingIntent piService=PendingIntent.getService(getApplicationContext(),1,
-                        new Intent(getApplicationContext(),ServiceNotify.class)
-                ,PendingIntent.FLAG_UPDATE_CURRENT);
-
+                //PendingIntent piService=PendingIntent.getService(getApplicationContext(),1,
+                //        new Intent(getApplicationContext(),ServiceNotify.class)
+                //        .putExtra("key_id",id+1)
+                //,PendingIntent.FLAG_UPDATE_CURRENT);
+                //mNotifi.addAction(android.R.drawable.ic_input_add,"instalar otra vez"
+                //        ,piService);
                 NotificationManager manager =(NotificationManager)
                         getSystemService(Context.NOTIFICATION_SERVICE);
                 manager.notify(id,mNotifi.build());

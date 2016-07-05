@@ -36,7 +36,8 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     ImageView  twimg;
     //para las imagenes de picasso
     private final String url1="http://www.posgrado.unam.mx/sites/default/files/el_viaje_de_los_objetos02.jpg";
-    private final String url2="http://www.posgrado.unam.mx/sites/default/files/cepe-tucson02.jpg";
+    private final String url2="http://www.posgrado.unam.mx/sites/default/files/lengua-larga02.jpg";
+    static String myURL;
     //para el activity request
     private static final int REQUEST_CODE_INSTALL_APP = 1;
     @Override
@@ -53,7 +54,8 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         Toolbar toolbar =(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.txtTitleNotifi);
-       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setIcon(android.R.drawable.sym_def_app_icon);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
         if (getIntent()!=null)
@@ -88,14 +90,14 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
             Boolean bimagen=false;
             if (iResource==1)
             {
-                bimagen=true;
+                myURL=url1;
             }
             else
             {
-                bimagen=false;
+                myURL=url2;
             }
             Context mcontext = this;
-            Picasso.with(mcontext).load(bimagen?url1:url2).into(twimg);
+            Picasso.with(mcontext).load(myURL).into(twimg);
         }
         else
         {
@@ -161,7 +163,8 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         switch (v.getId())
         {
             case R.id.btnDetailStoreOpen:
-                Uri uri = Uri.parse("http://www.posgrado.unam.mx"); // missing 'http://' will cause crashed
+                //para enviar una pagina web desde un boton
+                Uri uri = Uri.parse("http://www.posgrado.unam.mx");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
                 break;

@@ -22,5 +22,8 @@
     <string name="txtTitleEdit">Editar App</string>
 
     <string name="activity_detail_Btn_Edit">Edit</string>
-
+    <string name="detailstore_confirm_title">Importante</string>
+    <string name="detailstore_confirm_question">¿ Acepta la desinstalación de la APP ?</string>
+    <string name="detailstore_confirm_confirm">Confirmar</string>
+    <string name="detailstore_confirm_cancel">Cancelar</string>
 </resources>

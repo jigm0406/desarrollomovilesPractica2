@@ -1,10 +1,12 @@
 package mx.unam.jigm.practica2;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -45,6 +47,8 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     private static final int REQUEST_CODE_INSTALL_APP = 1;
     //para el accesoa la bdd
     private ItemDataSource itemDataSource;
+    //para el dialogho del desisntalar
+    AlertDialog.Builder dialogo1;
     @Override
 
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,21 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         btnOpen=(Button)findViewById(R.id.btnDetailStoreOpen);
         btnUpdate=(Button)findViewById(R.id.btnDetailStoreUpdate);
         itemDataSource = new ItemDataSource(getApplicationContext());
+        //preparando el dialogo de confirmación
+        dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle(R.string.detailstore_confirm_title);
+        dialogo1.setMessage(R.string.detailstore_confirm_question);
+        dialogo1.setCancelable(false);
+        dialogo1.setPositiveButton(R.string.detailstore_confirm_confirm, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+                acept_desinstall();
+            }
+        });
+        dialogo1.setNegativeButton(R.string.detailstore_confirm_cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+                //cancelar();
+            }
+        });
         //definir toolbar
         Toolbar toolbar =(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -112,6 +131,17 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         {
             Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_error_data),Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void acept_desinstall(){
+        startService(new Intent(getApplicationContext(), ServiceNotify.class));
+        //borrar datos a la bdd
+        ModelItem itemlist = new ModelItem();
+        itemlist.id=iditem;
+        itemDataSource.deleteItem(itemlist);
+        //para regresarse activity main
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -178,14 +208,11 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
                 startActivity(intent);
                 break;
             case R.id.btnDetailStoreUnistall:
-                startService(new Intent(getApplicationContext(), ServiceNotify.class));
-                //borrar datos a la bdd
-                ModelItem itemlist = new ModelItem();
-                itemlist.id=iditem;
-                itemDataSource.deleteItem(itemlist);
+                dialogo1.show();
                 break;
             case R.id.btnDetailStoreUpdate:
                 startService(new Intent(getApplicationContext(), ServiceNotify2.class));
+                //actualizar en bdd
                 break;
         }
 

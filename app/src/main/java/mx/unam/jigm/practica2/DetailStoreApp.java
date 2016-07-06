@@ -49,6 +49,8 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     private ItemDataSource itemDataSource;
     //para el dialogho del desisntalar
     AlertDialog.Builder dialogo1;
+    //para deshabilitar la opcion de menu edit
+    private MenuItem EditOptionMenu;
     @Override
 
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.btnDetailStoreUnistall).setOnClickListener(this);
         findViewById(R.id.btnDetailStoreOpen).setOnClickListener(this);
         findViewById(R.id.btnDetailStoreUpdate).setOnClickListener(this);
+        txtunistalledFull=(TextView) findViewById(R.id.unistallFull);
         btnUnistallaInstall=(Button)findViewById(R.id.btnDetailStoreUnistall);
         btnOpen=(Button)findViewById(R.id.btnDetailStoreOpen);
         btnUpdate=(Button)findViewById(R.id.btnDetailStoreUpdate);
@@ -140,14 +143,19 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         itemlist.id=iditem;
         itemDataSource.deleteItem(itemlist);
         //para regresarse activity main
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-       startActivity(intent);
-
+        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+       //startActivity(intent);
+        btnUnistallaInstall.setVisibility(View.INVISIBLE);
+        btnOpen.setVisibility(View.INVISIBLE);
+        btnUpdate.setVisibility(View.INVISIBLE);
+        txtunistalledFull.setVisibility(View.VISIBLE);
+        EditOptionMenu.setEnabled(false);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.menu_detailedit,menu);
+        EditOptionMenu = menu.getItem(0);
         return true;
     }
 //para seleccion de las opciones de menu

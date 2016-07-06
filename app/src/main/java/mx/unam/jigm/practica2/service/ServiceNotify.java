@@ -54,8 +54,8 @@ public class ServiceNotify extends Service {
         {
             mNotifi = (NotificationCompat.Builder) new NotificationCompat
                     .Builder(getApplicationContext())
-                    .setContentTitle("Desinstalando")
-                    .setContentText("Desinstalando APP")
+                    .setContentTitle(getResources().getString(R.string.servicenotify_desinstall_contexttitle))
+                    .setContentText(getResources().getString(R.string.servicenotify_desinstall_ContentText))
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.ic_file_cloud_done))
                     .setSmallIcon(android.R.drawable.ic_dialog_email);
         }
@@ -110,7 +110,6 @@ public class ServiceNotify extends Service {
                         getSystemService(Context.NOTIFICATION_SERVICE);
                 manager.notify(id,mNotifi.build());
             }
-
             myAsyncTask=null;
             stopSelf();
         }

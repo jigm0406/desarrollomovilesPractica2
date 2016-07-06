@@ -37,7 +37,7 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
     private int iditem;
     private Button btnUnistallaInstall,btnOpen,btnUpdate;
     //para mostrar la informacion recibida
-    TextView twNameApp,twDeploy,twDetail,twInstallUpdate;
+    TextView twNameApp,twDeploy,twDetail,twInstallUpdate,txtunistalledFull,btneditmenu;
     ImageView  twimg;
     //para las imagenes de picasso
     private final String url1="http://www.posgrado.unam.mx/sites/default/files/el_viaje_de_los_objetos02.jpg";
@@ -141,7 +141,8 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         itemDataSource.deleteItem(itemlist);
         //para regresarse activity main
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
+       startActivity(intent);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)

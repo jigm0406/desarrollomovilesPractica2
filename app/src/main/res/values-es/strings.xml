@@ -23,6 +23,7 @@
 
     <string name="activity_detail_Btn_Edit">Edit</string>
     <string name="detailstore_confirm_title">Importante</string>
+    <string name="detailstore_detailstoretxtUnistall_text">DESINSTALADO</string>
     <string name="detailstore_confirm_question">¿ Acepta la desinstalación de la APP ?</string>
     <string name="detailstore_confirm_confirm">Confirmar</string>
     <string name="detailstore_confirm_cancel">Cancelar</string>
@@ -33,9 +34,13 @@
     <string name="servicenotify2_update_text">Se ha completado en su totalidad la Actualización</string>
     <string name="servicenotify2_update_info">Actualizado</string>
     <string name="servicenotify2_update_bigtext">Se ha completado la Actualización.</string>
+    <string name="servicenotify2_update_Contexttitle">Actualizado</string>
+    <string name="servicenotify2_update_Contexttext">Actualizando APP</string>
     <string name="servicenotify_desinstall_title">Desinstalación completa</string>
     <string name="servicenotify_desinstall_text">Se ha completado en su totalidad la Desinstalación</string>
     <string name="servicenotify_desinstall_info">Desinstalado</string>
     <string name="servicenotify_desinstall_bigtext">Se ha completado la Desinstalación.</string>
+    <string name="servicenotify_desinstall_contexttitle">Desinstalando</string>
+    <string name="servicenotify_desinstall_ContentText">Desinstalando APP</string>
 
 </resources>

@@ -52,8 +52,8 @@ public class ServiceNotify2 extends Service {
         {
             mNotifi = (NotificationCompat.Builder) new NotificationCompat
                     .Builder(getApplicationContext())
-                    .setContentTitle("Actualizado")
-                    .setContentText("Actualizando APP")
+                    .setContentTitle(getResources().getString(R.string.servicenotify2_update_Contexttitle))
+                    .setContentText(getResources().getString(R.string.servicenotify2_update_Contexttext))
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.ic_file_cloud_done))
                     .setSmallIcon(android.R.drawable.ic_dialog_email);
         }

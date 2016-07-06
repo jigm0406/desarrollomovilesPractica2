@@ -74,7 +74,7 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
         });
         dialogo1.setNegativeButton(R.string.detailstore_confirm_cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogo1, int id) {
-                //cancelar();
+
             }
         });
         //definir toolbar
@@ -108,11 +108,11 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
              if (iInstallUpdate==1)
              {
                  btnUpdate.setText("UPDATE");
-                 btnUpdate.setEnabled(true);
+                 btnUpdate.setEnabled(false);
              }
              else
              {
-                 btnUpdate.setEnabled(false);
+                 btnUpdate.setEnabled(true);
              }
             // obtener la imagen por picasso
             Boolean bimagen=false;
@@ -213,6 +213,10 @@ public class DetailStoreApp extends AppCompatActivity implements View.OnClickLis
             case R.id.btnDetailStoreUpdate:
                 startService(new Intent(getApplicationContext(), ServiceNotify2.class));
                 //actualizar en bdd
+                ModelItem itemlist = new ModelItem();
+                itemlist.id=iditem;
+                itemlist.InstalUpdate=1;
+                itemDataSource.updateUpadet(itemlist);
                 break;
         }
 

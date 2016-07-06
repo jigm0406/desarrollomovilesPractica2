@@ -95,12 +95,12 @@ public class ServiceNotify extends Service {
             {
                 //elimina progress cuando lo seteamos a 0
                 mNotifi.setProgress(0,0,false);
-                mNotifi.setContentTitle("desinstalación completa");
-                mNotifi.setContentText("Se ha completado en su totalidad la desinstalación");
-                mNotifi.setContentInfo("Desinstalado");
+                mNotifi.setContentTitle(getResources().getString(R.string.servicenotify_desinstall_title));
+                mNotifi.setContentText(getResources().getString(R.string.servicenotify_desinstall_text));
+                mNotifi.setContentInfo(getResources().getString(R.string.servicenotify_desinstall_info));
                 mNotifi.setAutoCancel(true);
                 mNotifi.setStyle(new NotificationCompat.BigTextStyle()
-                .bigText("Se ha completado la desinstalación."));
+                .bigText(getResources().getString(R.string.servicenotify_desinstall_bigtext)));
                 PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),
                         0,new Intent(getApplicationContext(),
                                 DetailStoreApp.class),PendingIntent.FLAG_UPDATE_CURRENT);

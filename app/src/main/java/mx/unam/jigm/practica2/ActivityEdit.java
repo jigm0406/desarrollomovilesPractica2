@@ -53,6 +53,7 @@ public class ActivityEdit extends AppCompatActivity implements View.OnClickListe
         if (iInstallUpdate==1)
         {
             chkinstallaupdate.setSelected(true);
+            chkinstallaupdate.setEnabled(false);
         }
         else
         {

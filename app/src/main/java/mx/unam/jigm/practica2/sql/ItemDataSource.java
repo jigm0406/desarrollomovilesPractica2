@@ -41,6 +41,11 @@ public class ItemDataSource
         contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_INSTALLUPDATE,modelItem.InstalUpdate);
         db.update(MySqliteHelper.TABLE_NAME,contentValuesAPP,MySqliteHelper.COLUMN_ID+"='"+modelItem.id+"'",null);
     }
+    public void updateUpadet(ModelItem modelItem){
+        ContentValues contentValuesAPP = new ContentValues();
+        contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_INSTALLUPDATE,modelItem.InstalUpdate);
+        db.update(MySqliteHelper.TABLE_NAME,contentValuesAPP,MySqliteHelper.COLUMN_ID+"='"+modelItem.id+"'",null);
+    }
     public void deleteItem(ModelItem modelItem)
     {
         db.delete(MySqliteHelper.TABLE_NAME,MySqliteHelper.COLUMN_ID+"=?",

@@ -26,4 +26,15 @@
     <string name="detailstore_confirm_question">Accepts the removal of the APP?</string>
     <string name="detailstore_confirm_confirm">Acept</string>
     <string name="detailstore_confirm_cancel">Cancel</string>
+    <string name="detailstore_xml_txtunistall">unistall</string>
+    <string name="detailstore_xml_txtupdate">update</string>
+    <string name="detailstore_xml_txtopen">open</string>
+    <string name="servicenotify2_update_title">Full update</string>
+    <string name="servicenotify2_update_info">Updated</string>
+    <string name="servicenotify2_update_text">It is completed in its entirety Update</string>
+    <string name="servicenotify2_update_bigtext">Update is complete.</string>
+    <string name="servicenotify_desinstall_title">Full uninstall</string>
+    <string name="servicenotify_desinstall_text">It is completed in its entirety Uninstall</string>
+    <string name="servicenotify_desinstall_info">Uninstalled</string>
+    <string name="servicenotify_desinstall_bigtext">Uninstall is complete.</string>
 </resources>

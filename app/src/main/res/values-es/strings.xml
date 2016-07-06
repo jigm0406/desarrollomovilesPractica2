@@ -26,4 +26,16 @@
     <string name="detailstore_confirm_question">¿ Acepta la desinstalación de la APP ?</string>
     <string name="detailstore_confirm_confirm">Confirmar</string>
     <string name="detailstore_confirm_cancel">Cancelar</string>
+    <string name="detailstore_xml_txtunistall">desinstalar</string>
+    <string name="detailstore_xml_txtupdate">Actualizar</string>
+    <string name="detailstore_xml_txtopen">Abrir</string>
+    <string name="servicenotify2_update_title">Actualización completa</string>
+    <string name="servicenotify2_update_text">Se ha completado en su totalidad la Actualización</string>
+    <string name="servicenotify2_update_info">Actualizado</string>
+    <string name="servicenotify2_update_bigtext">Se ha completado la Actualización.</string>
+    <string name="servicenotify_desinstall_title">Desinstalación completa</string>
+    <string name="servicenotify_desinstall_text">Se ha completado en su totalidad la Desinstalación</string>
+    <string name="servicenotify_desinstall_info">Desinstalado</string>
+    <string name="servicenotify_desinstall_bigtext">Se ha completado la Desinstalación.</string>
+
 </resources>
